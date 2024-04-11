@@ -15,6 +15,9 @@ const configJs = require("./src/config/eleventy/javascript");
 
 const isProduction = process.env.ELEVENTY_ENV === "PROD";
 
+// Filter Imports
+const filterFormatDate = require("./src/config/filters/formatDate");
+
 module.exports = function (eleventyConfig) {
     /**
      *  PLUGINS
