@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="{{ page.lang }}" dir="{{ dir }}">
     <head>
         {#
         Created with help from the below repo, outlining all the possible tags that could belong in a <head>.
@@ -38,10 +38,8 @@
 
         <!-- Sitewide Stylesheets -->
         <link rel="stylesheet" href="/assets/css/root.css">
-        <link rel="stylesheet" href="/assets/css/dark.css">
 
         <!-- Sitewide Scripts -->
-        <script src="/assets/js/dark.js" defer></script>
         <script src="/assets/js/nav.js" defer></script>
 
         <!-- Use a head block in any layout extending from base.html to include page-specific <head> tags. It will be included here -->
@@ -51,6 +49,13 @@
 
         <!-- Uses the title directly from the frontmatter of the page -->
         <title>{{ title }}</title>
+
+        <script>
+            // Redirect to English version of the site
+            if (window.location.pathname === '/') {
+                window.location.href = '/en';
+            }
+        </script>
     </head>
     <body>
         {% include "components/header.html" %}

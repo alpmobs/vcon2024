@@ -8,8 +8,13 @@ package = "@netlify/plugin-lighthouse"
 [[plugins]]
 package = "netlify-plugin-cache"
 
-  [plugins.inputs]
+[plugins.inputs]
   paths = [
     "public/assets/images",
     ".cache"
   ]
+
+[[redirects]]
+  from = "/"
+  to = "/en"
+  status = 301
