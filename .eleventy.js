@@ -52,6 +52,13 @@ module.exports = function (eleventyConfig) {
         eleventyConfig.addPlugin(pluginCritical, configCritical);
     }
 
+    // Define and register the formatDate filter
+    eleventyConfig.addFilter("formatDate", function(date) {
+        // Your date formatting logic goes here
+        // Example:
+        return new Date(date).toLocaleDateString("en-US");
+    });
+
     /**
      *  PASSTHROUGH'S
      *      Copy/paste non-template files straight to /public, without any interference from the eleventy engine
